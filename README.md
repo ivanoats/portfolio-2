@@ -1,4 +1,5 @@
 Portfolio for Marshall Lanners
 
-![alt tag](app/assets/images/ScreenShot2013-10-08 at 6.35.06 PM.png)
+![ScreenShot](https://github.com/cheatermoves/portfolio/blob/master/app/assets/images/Screen%20Shot%202013-10-08%20at%206.35.06%20PM.png)
 
+![ScreenShot](https://github.com/cheatermoves/portfolio/blob/master/app/assets/images/Screen%20Shot%202013-10-08%20at%206.36.25%20PM.png)
