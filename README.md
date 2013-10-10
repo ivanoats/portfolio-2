@@ -23,3 +23,5 @@ Day 2
 Day 3
 
 ![alt tag](https://github.com/cheatermoves/portfolio/blob/master/app/assets/images/Screen%20Shot%202013-10-09%20at%206.27.34%20PM.png?raw=true)
+
+![alt tag](https://github.com/cheatermoves/portfolio/blob/master/app/assets/images/Screen%20Shot%202013-10-09%20at%206.26.57%20PM.png?raw=true)
