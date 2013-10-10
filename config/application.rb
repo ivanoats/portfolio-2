@@ -66,7 +66,8 @@ module Portfolio
     config.assets.version = '1.0'
 
     config.generators do |g|
-    g.test_framework :mini_test, :spec => true, :fixture => false
+    g.test_framework :mini_test, :spec => true
+    g.helper false
     end
   end
 end

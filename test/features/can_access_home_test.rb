@@ -5,6 +5,6 @@ feature "CanAccessHome" do
     #visit root_path
     visit "/"
     page.must_have_content "Welcome aboard"
-    page.wont_have_content "Goobye All!"
+    page.wont_have_content "Goodbye All!"
   end
 end

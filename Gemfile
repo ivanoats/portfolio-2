@@ -7,6 +7,8 @@ gem 'rails', '3.2.14'
 
 gem 'sqlite3'
 
+gem 'minitest-focus'
+
 group :development, :test do
   gem "minitest-rails"
 end
@@ -43,3 +45,5 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+
