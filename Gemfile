@@ -1,11 +1,12 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
+
 
 gem 'rails', '3.2.14'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 
 gem 'minitest-focus'
 
@@ -13,7 +14,16 @@ gem 'bootstrap-sass-rails'
 
 group :development, :test do
   gem "minitest-rails"
+  gem 'sqlite3'
 end
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
+
+
+
 
 group :test do
   gem "minitest-rails-capybara"
