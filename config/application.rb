@@ -68,7 +68,7 @@ module Portfolio
     config.generators do |g|
     g.test_framework :mini_test, :spec => true
     g.helper false
-    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
+    config.assets.initialize_on_precompile = false
     end
   end
 end
