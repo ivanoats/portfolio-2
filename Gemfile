@@ -9,6 +9,8 @@ gem 'sqlite3'
 
 gem 'minitest-focus'
 
+gem 'bootstrap-sass-rails'
+
 group :development, :test do
   gem "minitest-rails"
 end
