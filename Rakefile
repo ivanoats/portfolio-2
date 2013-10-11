@@ -8,6 +8,4 @@ require 'rake'
 
 Portfolio::Application.load_tasks
 
-if Rails.env == "test"
-  MiniTest::Rails::Testing.default_tasks << "features"
-end
+MiniTest::Rails::Testing.default_tasks << "features" if Rails.env == 'test'
