@@ -9,7 +9,6 @@ gem 'rails', '3.2.14'
 
 
 gem 'minitest-focus'
-
 gem 'bootstrap-sass-rails'
 
 group :development, :test do
