@@ -1,7 +1,7 @@
 require "test_helper"
 
 feature "VisitingThePostIndex" do
-  focus
+
   scenario "creates a post successfully" do
     #Given a completed post form
     visit posts_path

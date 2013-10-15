@@ -2,7 +2,7 @@ require "test_helper"
 
 feature "EditingAPost" do
   scenario "editing the post" do
-    visit post_path
+    visit posts_path
 
     click_on 'Edit'
     fill_in 'Title', with: 'code of the day'

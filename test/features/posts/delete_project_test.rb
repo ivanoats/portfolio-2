@@ -1,7 +1,7 @@
 require "test_helper"
 
-feature "DeletingAPost" do
-  scenario "delete the post" do
+feature "DeletingAProjectPost" do
+  scenario "delete the projectPost" do
     visit posts_path
     click_on 'Destroy'
 
