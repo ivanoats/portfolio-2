@@ -27,6 +27,16 @@ class ProjectsController < ApplicationController
 		@project = Project.find(params[:id])
 	end
 
+	def destroy
+    @project = Project.find(params[:id])
+    @project.destroy
+
+    respond_to do |format|
+      format.html { redirect_to projects_path }
+      format.json { head :no_content }
+    end
+  end
+
 	def update
 		@project = Project.find(params[:id])
 		if @project.update_attributes(params[:project])

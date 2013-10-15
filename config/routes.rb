@@ -51,6 +51,23 @@ Portfolio::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
+
+   match 'posts/home' => 'home#index'
+  match 'posts/:id/portfolio' => 'home#portfolio'
+  match 'posts/:id/contact' => 'home#contact'
+  match 'posts/:id/services' => 'home#services'
+  match 'posts/:id/home' => 'home#index'
+  match 'posts/:id/about' => 'home#about'
+  match 'posts/:id/home' => 'home#index'
+
+
+  match 'projects/home' => 'home#index'
+  match 'projects/:id/portfolio' => 'home#portfolio'
+  match 'projects/:id/contact' => 'home#contact'
+  match 'projects/:id/services' => 'home#services'
+  match 'projects/:id/home' => 'home#index'
+  match 'projects/:id/about' => 'home#about'
+  match 'projects/:id/home' => 'home#index'
   root :to => 'home#index'
   match 'home' => 'home#index'
   match 'about' => 'home#about'
