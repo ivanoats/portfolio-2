@@ -53,6 +53,7 @@ Portfolio::Application.routes.draw do
   # just remember to delete public/index.html.
 
 
+  match 'posts/home' => 'home#index'
   match 'posts/:id/portfolio' => 'home#portfolio'
   match 'posts/:id/contact' => 'home#contact'
   match 'posts/:id/services' => 'home#services'
