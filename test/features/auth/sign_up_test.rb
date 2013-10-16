@@ -5,8 +5,7 @@ feature"
   so that I can perform actions that require me to be logged in." do
   scenario "sign up" do
     # Given a registration form
-    visit "/"
-    click_on "Sign Up"
+    visit new_user_registration_path
 
     # When I register with valid info
     fill_in "Email", with: "test@example.com"
@@ -16,6 +15,5 @@ feature"
 
     # Then I should be signed up
     page.must_have_content "Welcome! You have signed up successfully"
-    page.wont_have_content "There was a problem with your sign up"
   end
 end
