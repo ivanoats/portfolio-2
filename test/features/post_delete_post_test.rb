@@ -2,6 +2,7 @@ require "test_helper"
 
 feature "DeletingAPost" do
   scenario "delete the post" do
+    sign_in_user
     visit posts_path
     click_on 'Destroy'
 

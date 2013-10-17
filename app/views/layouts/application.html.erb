@@ -1,91 +1,36 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Portfolio</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
+  <head>
+    <title>Portfolio</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
 
 
-<body>
+  <body>
 
-     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+    <%= render 'nav' %>
 
+    <%= render 'carousel' %>
+
+ <div class="section">
+    <div class"container">
+      <div class ="row">
+        <% flash.each do |key, value| %>
+        <div class="<%= flash_class(key) %>">
+          <%= value %>
         </div>
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Home', home_path%></li>
-          <li><%= link_to 'Blog', posts_path %></li>
-          <li><%= link_to 'Projects', projects_path %></li>
-            <li><%= link_to 'Contact', contact_path%></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                 <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-                <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-              </ul>
-            </li>
-              </ul>
-            </li>
-              </ul>
-            </li>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container -->
-    </nav>
+        <% end %>
+      </div>
+    </div>
+  </div>
 
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
-      <!-- Indicators -->
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-          <div class="item active">
-            <div class="fill" style="background-image:url('http://blog.bounceweb.com/wp-content/uploads/2010/09/Tools-for-Ruby-on-Rails-logo.jpg');"></div>
-          </div>
-          <div class="item">
-            <div class="fill" style="background-image:url('http://i.imgur.com/KLkLxBC.jpg');"></div>
-          </div>
-          <div class="item">
-            <div class="fill" style="background-image:url('http://dotfiles.github.io/images/forktocat.jpg');"></div>
-          </div>
-          <div class="item">
-            <div class="fill" style="background-image:url('http://fc02.deviantart.net/fs71/f/2012/037/c/4/css3_wallpaper_2_by_neersighted-d4ox1cr.jpg');"></div>
-          </div>
-          <div class="item">
-            <div class="fill" style="background-image:url('http://prasadprechu.files.wordpress.com/2013/01/twitter-bootstrap-website-for-inspiration-cssauthor-com.png?w=657&h=277');"></div>
-          </div>
-            <div class="item">
-            <div class="fill" style="background-image:url('http://fc06.deviantart.net/fs71/f/2011/026/9/2/html_5_wallpaper_by_bqra-d382muo.jpg');"></div>
-            </div>
-          </div>
-
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-          <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-          <span class="icon-next"></span>
-        </a>
+    <div>
+      <%= yield %>
     </div>
 
-    </body>
-    </html>
-<%= yield %>
+    <%= render 'footer' %>
+  </body>
+</html>
+
 

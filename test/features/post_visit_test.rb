@@ -4,6 +4,7 @@ feature "VisitingThePostIndex" do
 
   scenario "creates a post successfully" do
     #Given a completed post form
+    sign_in_user
     visit posts_path
     click_on "New Post"
     fill_in 'Title', with: 'Code Fellows'

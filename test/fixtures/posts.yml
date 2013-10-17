@@ -1,3 +1,4 @@
-sample_post:
-  title: Code Fellows
-  content: you learn to code
+cf:
+  title: <%= Faker::Name.name %>
+  content: Means striving for excellence
+  author: one

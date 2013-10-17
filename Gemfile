@@ -14,6 +14,7 @@ gem 'bootstrap-sass-rails'
 group :development, :test do
   gem "minitest-rails"
   gem 'sqlite3'
+  gem 'faker'
 end
 
 group :production do
@@ -25,6 +26,7 @@ end
 
 group :test do
   gem "minitest-rails-capybara"
+  gem 'launchy'
 end
 
 # Gems used only for assets and not required
@@ -42,7 +44,7 @@ end
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
