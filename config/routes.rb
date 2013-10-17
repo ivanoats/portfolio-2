@@ -68,7 +68,6 @@ Portfolio::Application.routes.draw do
   # match 'projects/:id/home' => 'home#index'
   # match 'projects/:id/about' => 'home#about'
   # match 'projects/:id/home' => 'home#index'
-
   root :to => 'home#index'
   match 'home' => 'home#index'
   match 'contact' => 'home#contact'

@@ -1,9 +1,15 @@
-// Activates the Carousel
+Activates the Carousel
 $('.carousel').carousel({
   interval: 5000
 })
 
-// Activates Tooltips for Social Links
+Activates Tooltips for Social Links
 $('.tooltip-social').tooltip({
   selector: "a[data-toggle=tooltip]"
 })
+
+$('#my-alert').bind('closed', function () {
+  // do something…
+})
+
+$(".alert").alert()
