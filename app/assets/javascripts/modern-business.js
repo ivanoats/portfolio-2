@@ -8,8 +8,3 @@ $('.tooltip-social').tooltip({
   selector: "a[data-toggle=tooltip]"
 })
 
-$('#my-alert').bind('closed', function () {
-  // do something…
-})
-
-$(".alert").alert()
