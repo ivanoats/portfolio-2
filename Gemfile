@@ -10,6 +10,7 @@ gem 'devise'
 
 gem 'minitest-focus'
 gem 'bootstrap-sass-rails'
+gem 'simplecov', :require => false, :group => :test
 
 group :development, :test do
   gem "minitest-rails"
