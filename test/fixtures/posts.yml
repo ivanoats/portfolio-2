@@ -2,3 +2,5 @@ cf:
   title: <%= Faker::Name.name %>
   content: Means striving for excellence
   author: one
+  published: true
+
