@@ -1,36 +1,36 @@
 <!DOCTYPE html>
-  <head>
-    <title>Portfolio</title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= csrf_meta_tags %>
-  </head>
+<head>
+  <title>Portfolio</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
 
 
-  <body>
+<body>
 
-    <%= render 'nav' %>
+  <%= render 'nav' %>
 
-    <%= render 'carousel' %>
-
- <div class="section">
-    <div class"container">
-      <div class ="row">
-        <% flash.each do |key, value| %>
-        <div class="<%= flash_class(key) %>">
-          <%= value %>
+  <%= render 'carousel' %>
+  <div class="container">
+    <div class="section">
+      <div class"container">
+        <div class ="row">
+          <% flash.each do |key, value| %>
+          <div class="<%= flash_class(key) %>">
+            <%= value %>
+          </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
   </div>
+  <div>
+    <%= yield %>
+  </div>
 
-    <div>
-      <%= yield %>
-    </div>
-
-    <%= render 'footer' %>
-  </body>
+  <%= render 'footer' %>
+</body>
 </html>
 
 

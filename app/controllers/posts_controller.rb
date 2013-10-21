@@ -1,9 +1,7 @@
 class PostsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index, :show]
   # GET /posts
   # GET /posts.json
-
-  before_filter :authenticate_user!, except: [:show, :index]
-
   def index
     @posts = Post.all
 
@@ -44,12 +42,13 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(params[:post])
-
+    authorize @post
     respond_to do |format|
       if @post.save
         current_user.posts << @post
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
+
       else
         format.html { render action: "new" }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -61,7 +60,7 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
-    authorize @post
+
     respond_to do |format|
       if @post.update_attributes(params[:post])
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -71,6 +70,13 @@ class PostsController < ApplicationController
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def publish
+    @post = Post.find(params[:id])
+    authorize @post, :update?
+    @post.publish!
+    redirect_to @post
   end
 
   # DELETE /posts/1
