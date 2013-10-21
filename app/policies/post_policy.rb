@@ -29,10 +29,13 @@ class PostPolicy < ApplicationPolicy
   class Scope < Struct.new(:user, :scope)
     def resolve
       if user.editor?
+        # Post.all
         scope.all
       elsif user.author?
-        scope.where(author_id: user.id)
+        # union of author's posts and published posts
+        scope.where(author_id: user.id) | scope.where(published: true)
       else
+        # Post.published
         scope.where(published: true)
       end
     end

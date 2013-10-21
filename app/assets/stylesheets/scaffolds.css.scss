@@ -6,16 +6,25 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+
 }
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+
 }
 
 p {
   background-color:white;
+  -moz-box-shadow: 0px 0px 4px #000000;
+-webkit-box-shadow: 0px 0px 4px #000000;
+box-shadow: 0px 0px 4px #000000;
+/*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+border-top-right-radius:2em;
+
+
 }
 
 pre {
