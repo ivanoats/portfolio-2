@@ -2,8 +2,8 @@ require "test_helper"
 
 feature "VisitingThePostIndex" do
 
-  scenario "creates a post successfully" do
-    #Given a completed post form
+    scenario "creates a post successfully" do
+#Given a completed post form
     sign_in_user
     visit posts_path
     click_on "New Post"
@@ -20,5 +20,20 @@ feature "VisitingThePostIndex" do
 
     # and a success message
     page.text.must_include 'Post was successfully created'
-  end
-end
+    end
+
+
+    scenario "authors can't publish" do
+        sign_in_user
+        visit new_post_path
+        page.wont_have_field('published')
+    end
+
+#     scenario "as an editor I want to be able to publish a post" do
+#         sign_in_user
+#         click_on "Edit Post"
+#         click_on "Publish"
+#         click_on "Update Post"
+#         page.text.must_include 'Published'
+#     end
+# end
