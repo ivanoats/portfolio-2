@@ -19,6 +19,7 @@ group :development, :test do
   gem "minitest-rails"
   gem 'sqlite3'
   gem 'faker'
+  gem "pry-rails"
 end
 
 group :production do

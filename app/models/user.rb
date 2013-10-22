@@ -1,16 +1,16 @@
 class User < ActiveRecord::Base
   attr_accessible :role, :published, :email, :password, :password_confirmation, :remember_me
 
-# Include default devise modules. Others available are:
-# :confirmable, :lockable, :timeoutable and :omniauthable
-devise :database_authenticatable, :registerable,
-:recoverable, :rememberable, :trackable, :validatable, :omniauthable
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+    :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
-# Setup accessible (or protected) attributes for your model
-# attr_accessible :title, :body
+  # Setup accessible (or protected) attributes for your model
+  # attr_accessible :title, :body
 
 
-has_many :posts, foreign_key: "author_id"
+  has_many :posts, foreign_key: "author_id"
 
   def author?
     role == 'author'
@@ -24,7 +24,8 @@ has_many :posts, foreign_key: "author_id"
     where(auth.slice(:provider, :uid)).first_or_create do |user|
     user.provider = auth.provider
     user.uid = auth.uid
-    user.username = auth.info.nickname
+    user.name = auth.info.nickname
+    user.email = "#{user.name}@twitter.example.com"
     end
   end
 
