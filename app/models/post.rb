@@ -3,6 +3,11 @@ class Post < ActiveRecord::Base
   validates_presence_of :title, :content
   belongs_to :author, class_name: "User"
 
+  validates :title, presence: true
+  validates :url, presence: true
+  validates :description, presence: true
+
+
   def publish!
     published = true
     save!

@@ -1,7 +1,11 @@
 Portfolio::Application.routes.draw do
-  devise_for :users
 
-  resources :posts
+resources :posts do
+  resources :comments
+end
+
+  devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
+
   resources :projects
 
   # The priority is based upon order of creation:
@@ -71,7 +75,6 @@ Portfolio::Application.routes.draw do
   root :to => 'home#index'
   match 'home' => 'home#index'
   match 'contact' => 'home#contact'
-  # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.

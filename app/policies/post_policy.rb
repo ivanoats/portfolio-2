@@ -11,7 +11,13 @@ class PostPolicy < ApplicationPolicy
       user.author? || user.editor?
     end
   end
-  alias_method :update?, :create?
+
+  def update?
+    if user.present?
+      return true if user.id == post.author_id
+      user.editor?
+    end
+  end
 
   def destroy?
     if user.present?

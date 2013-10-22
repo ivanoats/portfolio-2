@@ -4,4 +4,8 @@ cf:
   author: one
   published: true
 
-
+# cl:
+#   title: <%= Faker::Name.name %>
+#   content: awesome post
+#   author: two
+#   published: true

@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
+
   # GET /posts
   # GET /posts.json
   def index
@@ -15,6 +16,7 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
     @post = Post.find(params[:id])
+    # @comments = @post.comments
 
     respond_to do |format|
       format.html # show.html.erb
